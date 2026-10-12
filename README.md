@@ -357,6 +357,10 @@ Accelerate_with_ai_lab/
    # Edit .env with your API keys
    ```
 
+   Keep `.env` private and commit only placeholders in `.env.example`.
+   The template includes `ANTHROPIC_API_KEY` and `ANTHROPIC_MODEL` placeholders;
+   set actual values locally or in your hosting platform's secret settings.
+
 5. **Verify imports**
    ```bash
    python test_import.py
