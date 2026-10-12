@@ -1,0 +1,105 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Data (keep directory structure but exclude large files)
+data/landing/*.csv
+data/landing/*.xlsx
+data/profiles/*.json
+data/sttm/*.csv
+data/bronze_layer/*.parquet
+data/silver_layer/*.parquet
+data/gold_layer/*.parquet
+
+# Logs
+logs/
+*.log
+audit_logs/*.jsonl
+error_logs/*.json
+
+# Metrics
+metrics/
+*.json
+
+# Chroma vector DB
+.chroma/
+
+# Reports
+reports/*.html
+reports/*.pdf
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+Dockerfile.dev
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.circleci/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Misc
+*.zip
+*.tar.gz
+node_modules/
+npm-debug.log
+
+# Development
+*.swp
+.pytest_cache
+.mypy_cache
+.env.example

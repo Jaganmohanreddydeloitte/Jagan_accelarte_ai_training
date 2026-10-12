@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+.auth/
+.chroma/
+Document/
+Jagan_accelarte_ai_training/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+audit_logs/
+data/lineage/
+data/traces/
+reports/

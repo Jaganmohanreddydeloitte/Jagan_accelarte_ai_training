@@ -1,0 +1,53 @@
+transaction_id,transaction_date,store_id,product_id,product_name,category,quantity,unit_price,total_amount,customer_segment,payment_method
+TXN001,2024-01-15,S01,P001,Laptop Pro,Electronics,1,1299.99,1299.99,Premium,Credit Card
+TXN002,01/15/2024,S02,P002,Wireless Mouse,electronics,2,29.99,59.98,Standard,Debit Card
+TXN003,01-15-2024,S01,P003,USB-C Cable,ELECTRONICS,5,15.50,77.50,Budget,Cash
+TXN001,2024-01-15,S03,P004,Monitor 27",Elec.,1,349.99,349.99,Loyal,Credit Card
+TXN004,01/16/2024,,P005,Keyboard RGB,Electronics,1,89.99,89.99,Prem,Digital Wallet
+TXN005,2024-01-16,S02,P006,Desk Lamp,Home & Garden,3,24.99,74.97,Standard,Credit Card
+TXN006,01-16-2024,S01,P007,Office Chair,FURNITURE,1,199.99,199.99,Premium,Debit Card
+TXN007,2024-01-17,S04,P008,Notebook Pack,Stationery,10,5.99,59.90,Standard,Cash
+TXN008,01/17/2024,S03,P009,Pen Set,stationery,2,12.50,25.00,Budget,Credit Card
+TXN009,01-17-2024,S02,P010,Desk Organizer,HOME & GARDEN,1,39.99,39.99,Loyal,Digital Wallet
+TXN002,2024-01-18,S01,P002,Wireless Mouse,Electronics,1,29.99,29.99,Standard,Debit Card
+TXN010,01/18/2024,S04,,Smart Speaker,electronics,-1,79.99,-79.99,Std,Credit Card
+TXN011,2024-01-18,,P011,Webcam HD,ELECTRONICS,1,69.99,69.99,Premium,Credit Card
+TXN012,01-19-2024,S03,P012,Phone Case,Accessories,4,14.99,59.96,Standard,Cash
+TXN013,2024-01-19,S02,P013,Screen Protector,accessories,8,8.99,71.92,Budget,Debit Card
+TXN014,01/19/2024,S01,P014,Charger Cable,ACCESSORIES,2,19.99,39.98,Loyal,Credit Card
+TXN015,01-20-2024,S04,P015,Power Bank,Electronics,1,49.99,49.99,Prem,Digital Wallet
+TXN016,2024-01-20,S03,P016,Headphones,electronics,1,129.99,129.99,Premium,Credit Card
+TXN010,01/20/2024,S02,P017,Microphone,ELECTRONICS,1,89.99,89.99,Standard,Debit Card
+TXN017,2024-01-21,,P018,Monitor Stand,Furniture,2,24.99,49.98,Standard,Cash
+TXN018,01-21-2024,S01,P019,Mouse Pad,Accessories,5,9.99,49.95,Budget,Credit Card
+TXN019,2024-01-21,S04,P020,Desk Pad,accessories,1,44.99,44.99,Loyal,Digital Wallet
+TXN020,01/22/2024,S03,P021,LED Strip Lights,HOME & GARDEN,-2,19.99,-39.98,Bgt,Credit Card
+TXN021,2024-01-22,S02,P022,Air Purifier,Home & Garden,1,199.99,199.99,Premium,Debit Card
+TXN022,01-22-2024,S01,P023,Plant Pot,FURNITURE,3,15.99,47.97,Standard,Cash
+TXN023,2024-01-23,S04,P024,Curtain Rod,furniture,1,39.99,39.99,Loyal,Credit Card
+TXN024,01/23/2024,,P025,Wall Shelf,Home & garden,2,59.99,119.98,Premium,Digital Wallet
+TXN025,2024-01-23,S03,P026,Picture Frame,accessories,4,12.99,51.96,Standard,Debit Card
+TXN026,01-24-2024,S02,P027,Desk Organizer Set,Stationery,1,34.99,34.99,Budget,Credit Card
+TXN027,2024-01-24,S01,P028,Highlighter Pack,stationery,6,3.99,23.94,Loyal,Cash
+TXN028,01/24/2024,S04,P029,Sticky Notes,STATIONERY,12,1.99,23.88,Premium,Credit Card
+TXN029,2024-01-25,,P030,Scissors,stationery,2,5.99,11.98,Standard,Debit Card
+TXN030,01-25-2024,S03,P031,Stapler,Accessories,1,14.99,14.99,Budget,Digital Wallet
+TXN031,2024-01-25,S02,P032,Tape Dispenser,ACCESSORIES,1,9.99,9.99,Loyal,Credit Card
+TXN032,01/26/2024,S01,P033,Hole Punch,Stationery,1,19.99,19.99,Premium,Cash
+TXN033,2024-01-26,S04,P034,Paper Clips,stationery,10,0.99,9.90,Standard,Debit Card
+TXN034,01-26-2024,,P035,Binder Clips,STATIONERY,8,1.49,11.92,Budget,Credit Card
+TXN035,2024-01-27,S03,P036,Notebook Pro,Electronics,1,799.99,799.99,Prem,Digital Wallet
+TXN036,01/27/2024,S02,P037,Tablet,electronics,1,399.99,399.99,Premium,Debit Card
+TXN037,2024-01-27,S01,P038,Stylus Pen,ELECTRONICS,2,59.99,119.98,Standard,Credit Card
+TXN038,01-28-2024,S04,P039,Phone Stand,electronics,3,12.99,38.97,Loyal,Cash
+TXN039,2024-01-28,,P040,Cable Organizer,Accessories,4,9.99,39.96,Budget,Debit Card
+TXN040,01/28/2024,S03,P041,USB Hub,ACCESSORIES,1,49.99,49.99,Premium,Credit Card
+TXN041,2024-01-29,S02,P042,Dock Station,electronics,-1,129.99,-129.99,Std,Digital Wallet
+TXN042,01-29-2024,S01,P043,External SSD,Electronics,1,199.99,199.99,Standard,Credit Card
+TXN043,2024-01-29,S04,P044,Hard Drive,ELECTRONICS,1,119.99,119.99,Loyal,Debit Card
+TXN044,01/30/2024,,P045,RAM Stick,electronics,2,79.99,159.98,Budget,Cash
+TXN045,2024-01-30,S03,P046,SSD Drive,Accessories,1,169.99,169.99,Premium,Credit Card
+TXN046,01-30-2024,S02,P047,Graphics Card,ELECTRONICS,1,449.99,449.99,Prem,Digital Wallet
+TXN001,2024-01-30,S01,P048,Motherboard,electronics,1,299.99,299.99,Standard,Debit Card
+TXN047,2024-01-31,S04,P049,Power Supply,Electronics,1,89.99,89.99,Loyal,Credit Card
+TXN048,01/31/2024,S03,P050,PC Case,ELECTRONICS,1,99.99,99.99,Budget,Cash

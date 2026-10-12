@@ -1,0 +1,143 @@
+version: '3.8'
+
+services:
+  # Main Streamlit application
+  agentic-pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: agentic-medallion-pipeline
+    ports:
+      - "8501:8501"
+    environment:
+      # LLM Provider Configuration
+      - LLM_PROVIDER=${LLM_PROVIDER:-google}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - GEMINI_MODEL=${GEMINI_MODEL:-gemini-2.5-flash}
+      
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4o-mini}
+      
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - GROQ_MODEL=${GROQ_MODEL:-llama-3.3-70b-versatile}
+      
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - GITHUB_BASE_URL=${GITHUB_BASE_URL:-https://models.inference.ai.azure.com}
+      - GITHUB_MODEL=${GITHUB_MODEL:-gpt-4.1-mini}
+      
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-models/text-embedding-004}
+      
+      # Database Configuration (if using PostgreSQL)
+      - DATABASE_HOST=${DATABASE_HOST:-postgres}
+      - DATABASE_PORT=${DATABASE_PORT:-5432}
+      - DATABASE_NAME=${DATABASE_NAME:-agentic_pipeline}
+      - DATABASE_USER=${DATABASE_USER:-pipeline_user}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      
+      # Application Settings
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - ENABLE_MONITORING=${ENABLE_MONITORING:-true}
+      - ENABLE_MEMORY_SAMPLING=${ENABLE_MEMORY_SAMPLING:-true}
+      
+    volumes:
+      # Data volumes
+      - ./data:/app/data
+      - ./data/landing:/app/data/landing
+      - ./data/profiles:/app/data/profiles
+      - ./data/sttm:/app/data/sttm
+      - ./data/bronze_layer:/app/data/bronze_layer
+      - ./data/silver_layer:/app/data/silver_layer
+      - ./data/gold_layer:/app/data/gold_layer
+      - ./data/traces:/app/data/traces
+      
+      # Application volumes
+      - ./reports:/app/reports
+      - ./audit_logs:/app/audit_logs
+      - ./metrics:/app/metrics
+      - ./error_logs:/app/error_logs
+      - ./recovery_state:/app/recovery_state
+      - ./.chroma:/app/.chroma
+      
+      # Optional: Mount for local development (uncomment for dev mode)
+      # - ./app:/app/app
+      # - ./core:/app/core
+      # - ./agents:/app/agents
+    
+    depends_on:
+      - postgres
+    
+    networks:
+      - pipeline-network
+    
+    restart: unless-stopped
+    
+    # Logging configuration
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # Optional: PostgreSQL database (for Gold layer export)
+  postgres:
+    image: postgres:15-alpine
+    container_name: pipeline-postgres
+    environment:
+      - POSTGRES_DB=${DATABASE_NAME:-agentic_pipeline}
+      - POSTGRES_USER=${DATABASE_USER:-pipeline_user}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD:-pipeline123}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    networks:
+      - pipeline-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DATABASE_USER:-pipeline_user}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Optional: pgAdmin for database management
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pipeline-pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@example.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - "5050:80"
+    networks:
+      - pipeline-network
+    depends_on:
+      - postgres
+    restart: unless-stopped
+
+  # Optional: Redis for caching (if using caching)
+  redis:
+    image: redis:7-alpine
+    container_name: pipeline-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - pipeline-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  pipeline-network:
+    driver: bridge

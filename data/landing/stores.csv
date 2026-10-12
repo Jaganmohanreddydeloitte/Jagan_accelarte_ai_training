@@ -1,0 +1,11 @@
+store_id,store_name,region,city,state
+S01,Downtown Flagship,Northeast,New York,NY
+S02,Boston Hub,Northeast,Boston,MA
+S03,Philadelphia Express,Northeast,Philadelphia,PA
+S04,Atlanta Central,Southeast,Atlanta,GA
+S05,Miami Beach,Southeast,Miami,FL
+S06,Charlotte Station,Southeast,Charlotte,NC
+S07,Chicago Loop,Midwest,Chicago,IL
+S08,Detroit Metro,Midwest,Detroit,MI
+S09,Los Angeles Downtown,West,Los Angeles,CA
+S10,San Francisco Bay,West,San Francisco,CA
